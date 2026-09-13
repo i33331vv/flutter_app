@@ -1,4 +1,4 @@
-name: Build Android App Bundle
+name: Build Android App Bundle (AAB)
 
 on:
   push:
@@ -19,10 +19,11 @@ jobs:
           java-version: '17'
 
       - name: Set up Flutter
-        uses: subosito/flutter-action@v2
+        uses: subosito/flutter-action@v3
         with:
-          flutter-version: '3.x'
+          flutter-version: '3.19.x' # تم تثبيت إصدار مستقر يتوافق تماماً مع إعدادات مشروعك
           channel: 'stable'
+          cache: true
 
       - name: Install dependencies
         run: flutter pub get
