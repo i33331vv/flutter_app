@@ -1,36 +1,25 @@
 plugins {
     id("com.android.application")
-    id("dev.flutter.flutter-gradle-plugin")
+    id("kotlin-android")
+    // أي إضافات أخرى لديك هنا
 }
 
 android {
-    namespace = "com.example.appp"
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
+    namespace = "com.example.flutter_app" // أو اسم حزمة تطبيقك الحالي
+    compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.appp"
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
+        applicationId = "com.example.flutter_app"
+        minSdk = 21
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
     }
 
     buildTypes {
         release {
             signingConfig = signingConfigs.getByName("debug")
         }
-    }
-}
-
-kotlin {
-    compilerOptions {
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
     }
 }
 
